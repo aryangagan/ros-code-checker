@@ -1,0 +1,13 @@
+STATUS: PASS
+
+ERRORS:
+None
+
+WARNINGS:
+- Possible unsafe joint value 10 in node.py
+
+ROS SUMMARY:
+init_node_found: True
+publishers: 1
+subscribers: 0
+services: 0

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ROS Code Checker</title>
+</head>
+<body>
+    <h2>ROS Code Checker and Simulation Tool</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="zipfile" required>
+        <br><br>
+        <button type="submit">Upload & Run</button>
+    </form>
+
+    {% if report %}
+        <h3>Result</h3>
+        <pre>{{ report | tojson(indent=2) }}</pre>
+    {% endif %}
+</body>
+</html>

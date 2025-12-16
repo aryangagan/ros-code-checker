@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    "Possible unsafe joint value 10 in node.py"
+  ],
+  "ros_summary": {
+    "init_node_found": true,
+    "publishers": 1,
+    "subscribers": 0,
+    "services": 0
+  },
+  "simulation": {
+    "simulation_status": "NOT_EXECUTED",
+    "simulator": "Gazebo / CoppeliaSim",
+    "robot_model": "6-DOF robotic arm (UR5 / Franka)",
+    "scene": [
+      "robot arm",
+      "cube",
+      "target position"
+    ],
+    "logs_collected": false,
+    "screenshots_captured": false,
+    "note": "Simulation environment not configured in current setup"
+  }
+}
