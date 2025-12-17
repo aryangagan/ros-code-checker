@@ -1,63 +1,69 @@
-# ROS Code Checker Tool
+ROS Code Checker & Simulation Preview Tool
+Overview
 
-## Overview
-This project is developed as part of an internship assignment to build a simple tool that can
-check ROS/ROS2 code before running it in a simulator.
+This project is a simple tool to check ROS / ROS2 code and run it in a robotic arm simulation.
 
-The main focus of this phase is to validate the structure and safety of ROS Python code and
-generate clear reports that highlight errors and warnings.
+It was built as part of a robotics internship task to demonstrate:
 
----
+ROS code validation
 
-## What is Implemented
+Basic safety checks
 
-### ROS Code Checker
-The tool accepts a ZIP file containing a ROS Python package or node and performs the following checks:
+Running code in a simulator
 
-- Python syntax validation
-- ROS package structure verification
-  - Checks for presence of `package.xml`
-  - Checks for `setup.py` or `CMakeLists.txt`
-- Detection of basic ROS components:
-  - `rospy.init_node`
-  - Publishers
-  - Subscribers
-  - Services
-- Basic safety checks such as:
-  - Infinite loops without sleep
-  - Potentially unsafe numeric values used in code
+Showing results through a minimal web interface
 
-After validation, the tool generates:
-- A readable text report
-- A JSON report for structured output
+What This Tool Does
+1. Code Checker
 
----
+Accepts a ZIP file containing a ROS/ROS2 package or node
 
-## Test Packages
+Checks:
 
-Two sample test packages are included to verify the checker:
+Python syntax using flake8
 
-### good_package
-- Contains a valid ROS Python node
-- Includes `package.xml` and `setup.py`
-- Passes syntax and structural checks
+ROS package structure (package.xml, CMakeLists.txt / setup.py)
 
-### bad_package
-- Missing `package.xml`
-- Contains an infinite loop without delay
-- Fails validation as expected
+Detects publishers, subscribers, services, and init_node
 
-These packages help demonstrate both pass and fail cases of the checker.
+Basic safety checks (joint limits, missing sleep in loops)
 
----
+Generates:
 
-## How to Run the Project
+A text report
 
-### Requirements
-- Python 3.x
-- No ROS installation required for this phase
+A JSON report
 
-### Steps
-1. Open a terminal in the project root directory:
-   ```bash
-   cd ros-code-checker
+2. Simulation Runner
+
+Runs the validated code in Gazebo / CoppeliaSim
+
+Uses a simple 6-DOF robotic arm
+
+Scene includes:
+
+Robotic arm
+
+One cube
+
+One target position
+
+Records:
+
+Joint movements
+
+Success or failure
+
+Few simulation screenshots
+
+3. Web Interface
+
+Simple web UI to:
+
+Upload ROS code
+
+View checker report
+
+Trigger simulation
+
+See logs and preview images
